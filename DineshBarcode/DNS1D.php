@@ -471,7 +471,7 @@ class DNS1D {
                 } else {
                     $t = false; // space
                 }
-                $w = $chr[$char]{$j};
+                $w = $chr[$char][$j];
                 $bararray['bcode'][$k] = array('t' => $t, 'w' => $w, 'h' => 1, 'p' => 0);
                 $bararray['maxw'] += $w;
                 ++$k;
@@ -674,7 +674,7 @@ class DNS1D {
                 } else {
                     $t = false; // space
                 }
-                $w = $chr[$char]{$j};
+                $w = $chr[$char][$j];
                 $bararray['bcode'][$k] = array('t' => $t, 'w' => $w, 'h' => 1, 'p' => 0);
                 $bararray['maxw'] += $w;
                 ++$k;
@@ -927,7 +927,7 @@ class DNS1D {
         $clen = strlen($code);
         for ($i = 0; $i < $clen; $i = ($i + 2)) {
             $char_bar = $code[$i];
-            $char_space = $code{$i + 1};
+            $char_space = $code[$i + 1];
             if ((!isset($chr[$char_bar])) OR (!isset($chr[$char_space]))) {
                 // invalid character
                 return false;
@@ -936,7 +936,7 @@ class DNS1D {
             $seq = '';
             $chrlen = strlen($chr[$char_bar]);
             for ($s = 0; $s < $chrlen; $s++) {
-                $seq .= $chr[$char_bar]{$s} . $chr[$char_space]{$s};
+                $seq .= $chr[$char_bar][$s] . $chr[$char_space][$s];
             }
             $seqlen = strlen($seq);
             for ($j = 0; $j < $seqlen; ++$j) {
@@ -945,7 +945,7 @@ class DNS1D {
                 } else {
                     $t = false; // space
                 }
-                $w = $seq{$j};
+                $w = $seq[$j];
                 $bararray['bcode'][$k] = array('t' => $t, 'w' => $w, 'h' => 1, 'p' => 0);
                 $bararray['maxw'] += $w;
                 ++$k;
@@ -1131,7 +1131,7 @@ class DNS1D {
                         return false;
                     }
                     for ($i = 0; $i < $len; $i+=2) {
-                        $chrnum = $code[$i] . $code{$i + 1};
+                        $chrnum = $code[$i] . $code[$i + 1];
                         if (preg_match('/([0-9]{2})/', $chrnum) > 0) {
                             $code_data[] = intval($chrnum);
                         } else {
@@ -1247,7 +1247,7 @@ class DNS1D {
                                         $code_data[] = 99;
                                     }
                                     for ($i = 0; $i < $seq[2]; $i+=2) {
-                                        $chrnum = $seq[1][$i] . $seq[1]{$i + 1};
+                                        $chrnum = $seq[1][$i] . $seq[1][$i + 1];
                                         $code_data[] = intval($chrnum);
                                     }
                                     break;
@@ -1278,7 +1278,7 @@ class DNS1D {
                 } else {
                     $t = false; // space
                 }
-                $w = $seq{$j};
+                $w = $seq[$j];
                 $bararray['bcode'][] = array('t' => $t, 'w' => $w, 'h' => 1, 'p' => 0);
                 $bararray['maxw'] += $w;
             }
@@ -1363,7 +1363,7 @@ class DNS1D {
         if ($code_len == $data_len) {
             // add check digit
             $code .= $r;
-        } elseif ($r !== intval($code{$data_len})) {
+        } elseif ($r !== intval($code[$data_len])) {
             // wrong checkdigit
             return false;
         }
@@ -1863,7 +1863,7 @@ class DNS1D {
                 } else {
                     $t = false; // space
                 }
-                $w = $seq{$j};
+                $w = $seq[$j];
                 $bararray['bcode'][$k] = array('t' => $t, 'w' => $w, 'h' => 1, 'p' => 0);
                 $bararray['maxw'] += $w;
                 ++$k;
@@ -1954,7 +1954,7 @@ class DNS1D {
                 } else {
                     $t = false; // space
                 }
-                $w = $seq{$j};
+                $w = $seq[$j];
                 $bararray['bcode'][$k] = array('t' => $t, 'w' => $w, 'h' => 1, 'p' => 0);
                 $bararray['maxw'] += $w;
                 ++$k;
@@ -2211,7 +2211,7 @@ class DNS1D {
         $bitval = 1;
         $len = strlen($hex);
         for ($pos = ($len - 1); $pos >= 0; --$pos) {
-            $dec = bcadd($dec, bcmul(hexdec($hex{$pos}), $bitval));
+            $dec = bcadd($dec, bcmul(hexdec($hex[$pos]), $bitval));
             $bitval = bcmul($bitval, 16);
         }
         return $dec;
