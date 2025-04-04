@@ -260,130 +260,130 @@ class DNS1D {
     protected function setBarcode($code, $type) {
         switch (strtoupper($type)) {
             case 'C39': { // CODE 39 - ANSI MH10.8M-1983 - USD-3 - 3 of 9.
-                    $arrcode = $this->barcode_code39($code, false, false);
-                    break;
-                }
+                $arrcode = $this->barcode_code39($code, false, false);
+                break;
+            }
             case 'C39+': { // CODE 39 with checksum
-                    $arrcode = $this->barcode_code39($code, false, true);
-                    break;
-                }
+                $arrcode = $this->barcode_code39($code, false, true);
+                break;
+            }
             case 'C39E': { // CODE 39 EXTENDED
-                    $arrcode = $this->barcode_code39($code, true, false);
-                    break;
-                }
+                $arrcode = $this->barcode_code39($code, true, false);
+                break;
+            }
             case 'C39E+': { // CODE 39 EXTENDED + CHECKSUM
-                    $arrcode = $this->barcode_code39($code, true, true);
-                    break;
-                }
+                $arrcode = $this->barcode_code39($code, true, true);
+                break;
+            }
             case 'C93': { // CODE 93 - USS-93
-                    $arrcode = $this->barcode_code93($code);
-                    break;
-                }
+                $arrcode = $this->barcode_code93($code);
+                break;
+            }
             case 'S25': { // Standard 2 of 5
-                    $arrcode = $this->barcode_s25($code, false);
-                    break;
-                }
+                $arrcode = $this->barcode_s25($code, false);
+                break;
+            }
             case 'S25+': { // Standard 2 of 5 + CHECKSUM
-                    $arrcode = $this->barcode_s25($code, true);
-                    break;
-                }
+                $arrcode = $this->barcode_s25($code, true);
+                break;
+            }
             case 'I25': { // Interleaved 2 of 5
-                    $arrcode = $this->barcode_i25($code, false);
-                    break;
-                }
+                $arrcode = $this->barcode_i25($code, false);
+                break;
+            }
             case 'I25+': { // Interleaved 2 of 5 + CHECKSUM
-                    $arrcode = $this->barcode_i25($code, true);
-                    break;
-                }
+                $arrcode = $this->barcode_i25($code, true);
+                break;
+            }
             case 'C128': { // CODE 128
-                    $arrcode = $this->barcode_c128($code, '');
-                    break;
-                }
+                $arrcode = $this->barcode_c128($code, '');
+                break;
+            }
             case 'C128A': { // CODE 128 A
-                    $arrcode = $this->barcode_c128($code, 'A');
-                    break;
-                }
+                $arrcode = $this->barcode_c128($code, 'A');
+                break;
+            }
             case 'C128B': { // CODE 128 B
-                    $arrcode = $this->barcode_c128($code, 'B');
-                    break;
-                }
+                $arrcode = $this->barcode_c128($code, 'B');
+                break;
+            }
             case 'C128C': { // CODE 128 C
-                    $arrcode = $this->barcode_c128($code, 'C');
-                    break;
-                }
+                $arrcode = $this->barcode_c128($code, 'C');
+                break;
+            }
             case 'EAN2': { // 2-Digits UPC-Based Extention
-                    $arrcode = $this->barcode_eanext($code, 2);
-                    break;
-                }
+                $arrcode = $this->barcode_eanext($code, 2);
+                break;
+            }
             case 'EAN5': { // 5-Digits UPC-Based Extention
-                    $arrcode = $this->barcode_eanext($code, 5);
-                    break;
-                }
+                $arrcode = $this->barcode_eanext($code, 5);
+                break;
+            }
             case 'EAN8': { // EAN 8
-                    $arrcode = $this->barcode_eanupc($code, 8);
-                    break;
-                }
+                $arrcode = $this->barcode_eanupc($code, 8);
+                break;
+            }
             case 'EAN13': { // EAN 13
-                    $arrcode = $this->barcode_eanupc($code, 13);
-                    break;
-                }
+                $arrcode = $this->barcode_eanupc($code, 13);
+                break;
+            }
             case 'UPCA': { // UPC-A
-                    $arrcode = $this->barcode_eanupc($code, 12);
-                    break;
-                }
+                $arrcode = $this->barcode_eanupc($code, 12);
+                break;
+            }
             case 'UPCE': { // UPC-E
-                    $arrcode = $this->barcode_eanupc($code, 6);
-                    break;
-                }
+                $arrcode = $this->barcode_eanupc($code, 6);
+                break;
+            }
             case 'MSI': { // MSI (Variation of Plessey code)
-                    $arrcode = $this->barcode_msi($code, false);
-                    break;
-                }
+                $arrcode = $this->barcode_msi($code, false);
+                break;
+            }
             case 'MSI+': { // MSI + CHECKSUM (modulo 11)
-                    $arrcode = $this->barcode_msi($code, true);
-                    break;
-                }
+                $arrcode = $this->barcode_msi($code, true);
+                break;
+            }
             case 'POSTNET': { // POSTNET
-                    $arrcode = $this->barcode_postnet($code, false);
-                    break;
-                }
+                $arrcode = $this->barcode_postnet($code, false);
+                break;
+            }
             case 'PLANET': { // PLANET
-                    $arrcode = $this->barcode_postnet($code, true);
-                    break;
-                }
+                $arrcode = $this->barcode_postnet($code, true);
+                break;
+            }
             case 'RMS4CC': { // RMS4CC (Royal Mail 4-state Customer Code) - CBC (Customer Bar Code)
-                    $arrcode = $this->barcode_rms4cc($code, false);
-                    break;
-                }
+                $arrcode = $this->barcode_rms4cc($code, false);
+                break;
+            }
             case 'KIX': { // KIX (Klant index - Customer index)
-                    $arrcode = $this->barcode_rms4cc($code, true);
-                    break;
-                }
+                $arrcode = $this->barcode_rms4cc($code, true);
+                break;
+            }
             case 'IMB': { // IMB - Intelligent Mail Barcode - Onecode - USPS-B-3200
-                    $arrcode = $this->barcode_imb($code);
-                    break;
-                }
+                $arrcode = $this->barcode_imb($code);
+                break;
+            }
             case 'CODABAR': { // CODABAR
-                    $arrcode = $this->barcode_codabar($code);
-                    break;
-                }
+                $arrcode = $this->barcode_codabar($code);
+                break;
+            }
             case 'CODE11': { // CODE 11
-                    $arrcode = $this->barcode_code11($code);
-                    break;
-                }
+                $arrcode = $this->barcode_code11($code);
+                break;
+            }
             case 'PHARMA': { // PHARMACODE
-                    $arrcode = $this->barcode_pharmacode($code);
-                    break;
-                }
+                $arrcode = $this->barcode_pharmacode($code);
+                break;
+            }
             case 'PHARMA2T': { // PHARMACODE TWO-TRACKS
-                    $arrcode = $this->barcode_pharmacode2t($code);
-                    break;
-                }
+                $arrcode = $this->barcode_pharmacode2t($code);
+                break;
+            }
             default: {
-                    $this->barcode_array = false;
-                    $arrcode = false;
-                    break;
-                }
+                $this->barcode_array = false;
+                $arrcode = false;
+                break;
+            }
         }
         $this->barcode_array = $arrcode;
     }
@@ -874,7 +874,7 @@ class DNS1D {
         $k = 0;
         for ($i = 0; $i < $len; ++$i) {
             $w += 1;
-            if (($i == ($len - 1)) OR (($i < ($len - 1)) AND ($seq[$i] != $seq{($i + 1)}))) {
+            if (($i == ($len - 1)) OR (($i < ($len - 1)) AND ($seq[$i] != $seq[($i + 1)]))) {
                 if ($seq[$i] == '1') {
                     $t = true; // bar
                 } else {
@@ -1090,171 +1090,171 @@ class DNS1D {
         $len = strlen($code);
         switch (strtoupper($type)) {
             case 'A': { // MODE A
-                    $startid = 103;
-                    for ($i = 0; $i < $len; ++$i) {
-                        $char = $code[$i];
-                        $char_id = ord($char);
-                        if (($char_id >= 241) AND ($char_id <= 244)) {
-                            $code_data[] = $fnc_a[$char_id];
-                        } elseif (($char_id >= 0) AND ($char_id <= 95)) {
-                            $code_data[] = strpos($keys_a, $char);
-                        } else {
-                            return false;
-                        }
-                    }
-                    break;
-                }
-            case 'B': { // MODE B
-                    $startid = 104;
-                    for ($i = 0; $i < $len; ++$i) {
-                        $char = $code[$i];
-                        $char_id = ord($char);
-                        if (($char_id >= 241) AND ($char_id <= 244)) {
-                            $code_data[] = $fnc_b[$char_id];
-                        } elseif (($char_id >= 32) AND ($char_id <= 127)) {
-                            $code_data[] = strpos($keys_b, $char);
-                        } else {
-                            return false;
-                        }
-                    }
-                    break;
-                }
-            case 'C': { // MODE C
-                    $startid = 105;
-                    if (ord($code{0}) == 241) {
-                        $code_data[] = 102;
-                        $code = substr($code, 1);
-                        --$len;
-                    }
-                    if (($len % 2) != 0) {
-                        // the length must be even
+                $startid = 103;
+                for ($i = 0; $i < $len; ++$i) {
+                    $char = $code[$i];
+                    $char_id = ord($char);
+                    if (($char_id >= 241) AND ($char_id <= 244)) {
+                        $code_data[] = $fnc_a[$char_id];
+                    } elseif (($char_id >= 0) AND ($char_id <= 95)) {
+                        $code_data[] = strpos($keys_a, $char);
+                    } else {
                         return false;
                     }
-                    for ($i = 0; $i < $len; $i+=2) {
-                        $chrnum = $code[$i] . $code[$i + 1];
-                        if (preg_match('/([0-9]{2})/', $chrnum) > 0) {
-                            $code_data[] = intval($chrnum);
-                        } else {
-                            return false;
-                        }
-                    }
-                    break;
                 }
-            default: { // MODE AUTO
-                    // split code into sequences
-                    $sequence = array();
-                    // get numeric sequences (if any)
-                    $numseq = array();
-                    preg_match_all('/([0-9]{4,})/', $code, $numseq, PREG_OFFSET_CAPTURE);
-                    if (isset($numseq[1]) AND !empty($numseq[1])) {
-                        $end_offset = 0;
-                        foreach ($numseq[1] as $val) {
-                            $offset = $val[1];
-                            if ($offset > $end_offset) {
-                                // non numeric sequence
-                                $sequence = array_merge($sequence, $this->get128ABsequence(substr($code, $end_offset, ($offset - $end_offset))));
-                            }
-                            // numeric sequence
-                            $slen = strlen($val[0]);
-                            if (($slen % 2) != 0) {
-                                // the length must be even
-                                --$slen;
-                            }
-                            $sequence[] = array('C', substr($code, $offset, $slen), $slen);
-                            $end_offset = $offset + $slen;
-                        }
-                        if ($end_offset < $len) {
-                            $sequence = array_merge($sequence, $this->get128ABsequence(substr($code, $end_offset)));
-                        }
+                break;
+            }
+            case 'B': { // MODE B
+                $startid = 104;
+                for ($i = 0; $i < $len; ++$i) {
+                    $char = $code[$i];
+                    $char_id = ord($char);
+                    if (($char_id >= 241) AND ($char_id <= 244)) {
+                        $code_data[] = $fnc_b[$char_id];
+                    } elseif (($char_id >= 32) AND ($char_id <= 127)) {
+                        $code_data[] = strpos($keys_b, $char);
                     } else {
-                        // text code (non C mode)
-                        $sequence = array_merge($sequence, $this->get128ABsequence($code));
+                        return false;
                     }
-                    // process the sequence
-                    foreach ($sequence as $key => $seq) {
-                        switch ($seq[0]) {
-                            case 'A': {
-                                    if ($key == 0) {
-                                        $startid = 103;
-                                    } elseif ($sequence[($key - 1)][0] != 'A') {
-                                        if (($seq[2] == 1) AND ($key > 0) AND ($sequence[($key - 1)][0] == 'B') AND (!isset($sequence[($key - 1)][3]))) {
-                                            // single character shift
-                                            $code_data[] = 98;
-                                            // mark shift
-                                            $sequence[$key][3] = true;
-                                        } elseif (!isset($sequence[($key - 1)][3])) {
-                                            $code_data[] = 101;
-                                        }
-                                    }
-                                    for ($i = 0; $i < $seq[2]; ++$i) {
-                                        $char = $seq[1][$i];
-                                        $char_id = ord($char);
-                                        if (($char_id >= 241) AND ($char_id <= 244)) {
-                                            $code_data[] = $fnc_a[$char_id];
-                                        } else {
-                                            $code_data[] = strpos($keys_a, $char);
-                                        }
-                                    }
-                                    break;
+                }
+                break;
+            }
+            case 'C': { // MODE C
+                $startid = 105;
+                if (ord($code[0]) == 241) {
+                    $code_data[] = 102;
+                    $code = substr($code, 1);
+                    --$len;
+                }
+                if (($len % 2) != 0) {
+                    // the length must be even
+                    return false;
+                }
+                for ($i = 0; $i < $len; $i+=2) {
+                    $chrnum = $code[$i] . $code[$i + 1];
+                    if (preg_match('/([0-9]{2})/', $chrnum) > 0) {
+                        $code_data[] = intval($chrnum);
+                    } else {
+                        return false;
+                    }
+                }
+                break;
+            }
+            default: { // MODE AUTO
+                // split code into sequences
+                $sequence = array();
+                // get numeric sequences (if any)
+                $numseq = array();
+                preg_match_all('/([0-9]{4,})/', $code, $numseq, PREG_OFFSET_CAPTURE);
+                if (isset($numseq[1]) AND !empty($numseq[1])) {
+                    $end_offset = 0;
+                    foreach ($numseq[1] as $val) {
+                        $offset = $val[1];
+                        if ($offset > $end_offset) {
+                            // non numeric sequence
+                            $sequence = array_merge($sequence, $this->get128ABsequence(substr($code, $end_offset, ($offset - $end_offset))));
+                        }
+                        // numeric sequence
+                        $slen = strlen($val[0]);
+                        if (($slen % 2) != 0) {
+                            // the length must be even
+                            --$slen;
+                        }
+                        $sequence[] = array('C', substr($code, $offset, $slen), $slen);
+                        $end_offset = $offset + $slen;
+                    }
+                    if ($end_offset < $len) {
+                        $sequence = array_merge($sequence, $this->get128ABsequence(substr($code, $end_offset)));
+                    }
+                } else {
+                    // text code (non C mode)
+                    $sequence = array_merge($sequence, $this->get128ABsequence($code));
+                }
+                // process the sequence
+                foreach ($sequence as $key => $seq) {
+                    switch ($seq[0]) {
+                        case 'A': {
+                            if ($key == 0) {
+                                $startid = 103;
+                            } elseif ($sequence[($key - 1)][0] != 'A') {
+                                if (($seq[2] == 1) AND ($key > 0) AND ($sequence[($key - 1)][0] == 'B') AND (!isset($sequence[($key - 1)][3]))) {
+                                    // single character shift
+                                    $code_data[] = 98;
+                                    // mark shift
+                                    $sequence[$key][3] = true;
+                                } elseif (!isset($sequence[($key - 1)][3])) {
+                                    $code_data[] = 101;
                                 }
-                            case 'B': {
-                                    if ($key == 0) {
-                                        $tmpchr = ord($seq[1]{0});
-                                        if (($seq[2] == 1) AND ($tmpchr >= 241) AND ($tmpchr <= 244) AND isset($sequence[($key + 1)]) AND ($sequence[($key + 1)][0] != 'B')) {
-                                            switch ($sequence[($key + 1)][0]) {
-                                                case 'A': {
-                                                        $startid = 103;
-                                                        $sequence[$key][0] = 'A';
-                                                        $code_data[] = $fnc_a[$tmpchr];
-                                                        break;
-                                                    }
-                                                case 'C': {
-                                                        $startid = 105;
-                                                        $sequence[$key][0] = 'C';
-                                                        $code_data[] = $fnc_a[$tmpchr];
-                                                        break;
-                                                    }
-                                            }
+                            }
+                            for ($i = 0; $i < $seq[2]; ++$i) {
+                                $char = $seq[1][$i];
+                                $char_id = ord($char);
+                                if (($char_id >= 241) AND ($char_id <= 244)) {
+                                    $code_data[] = $fnc_a[$char_id];
+                                } else {
+                                    $code_data[] = strpos($keys_a, $char);
+                                }
+                            }
+                            break;
+                        }
+                        case 'B': {
+                            if ($key == 0) {
+                                $tmpchr = ord($seq[1][0]);
+                                if (($seq[2] == 1) AND ($tmpchr >= 241) AND ($tmpchr <= 244) AND isset($sequence[($key + 1)]) AND ($sequence[($key + 1)][0] != 'B')) {
+                                    switch ($sequence[($key + 1)][0]) {
+                                        case 'A': {
+                                            $startid = 103;
+                                            $sequence[$key][0] = 'A';
+                                            $code_data[] = $fnc_a[$tmpchr];
                                             break;
-                                        } else {
-                                            $startid = 104;
                                         }
-                                    } elseif ($sequence[($key - 1)][0] != 'B') {
-                                        if (($seq[2] == 1) AND ($key > 0) AND ($sequence[($key - 1)][0] == 'A') AND (!isset($sequence[($key - 1)][3]))) {
-                                            // single character shift
-                                            $code_data[] = 98;
-                                            // mark shift
-                                            $sequence[$key][3] = true;
-                                        } elseif (!isset($sequence[($key - 1)][3])) {
-                                            $code_data[] = 100;
-                                        }
-                                    }
-                                    for ($i = 0; $i < $seq[2]; ++$i) {
-                                        $char = $seq[1][$i];
-                                        $char_id = ord($char);
-                                        if (($char_id >= 241) AND ($char_id <= 244)) {
-                                            $code_data[] = $fnc_b[$char_id];
-                                        } else {
-                                            $code_data[] = strpos($keys_b, $char);
+                                        case 'C': {
+                                            $startid = 105;
+                                            $sequence[$key][0] = 'C';
+                                            $code_data[] = $fnc_a[$tmpchr];
+                                            break;
                                         }
                                     }
                                     break;
+                                } else {
+                                    $startid = 104;
                                 }
-                            case 'C': {
-                                    if ($key == 0) {
-                                        $startid = 105;
-                                    } elseif ($sequence[($key - 1)][0] != 'C') {
-                                        $code_data[] = 99;
-                                    }
-                                    for ($i = 0; $i < $seq[2]; $i+=2) {
-                                        $chrnum = $seq[1][$i] . $seq[1][$i + 1];
-                                        $code_data[] = intval($chrnum);
-                                    }
-                                    break;
+                            } elseif ($sequence[($key - 1)][0] != 'B') {
+                                if (($seq[2] == 1) AND ($key > 0) AND ($sequence[($key - 1)][0] == 'A') AND (!isset($sequence[($key - 1)][3]))) {
+                                    // single character shift
+                                    $code_data[] = 98;
+                                    // mark shift
+                                    $sequence[$key][3] = true;
+                                } elseif (!isset($sequence[($key - 1)][3])) {
+                                    $code_data[] = 100;
                                 }
+                            }
+                            for ($i = 0; $i < $seq[2]; ++$i) {
+                                $char = $seq[1][$i];
+                                $char_id = ord($char);
+                                if (($char_id >= 241) AND ($char_id <= 244)) {
+                                    $code_data[] = $fnc_b[$char_id];
+                                } else {
+                                    $code_data[] = strpos($keys_b, $char);
+                                }
+                            }
+                            break;
+                        }
+                        case 'C': {
+                            if ($key == 0) {
+                                $startid = 105;
+                            } elseif ($sequence[($key - 1)][0] != 'C') {
+                                $code_data[] = 99;
+                            }
+                            for ($i = 0; $i < $seq[2]; $i+=2) {
+                                $chrnum = $seq[1][$i] . $seq[1][$i + 1];
+                                $code_data[] = intval($chrnum);
+                            }
+                            break;
                         }
                     }
                 }
+            }
         }
         // calculate check character
         $sum = $startid;
@@ -1472,7 +1472,7 @@ class DNS1D {
         $seq = '101'; // left guard bar
         if ($upce) {
             $bararray = array('code' => $upce_code, 'maxw' => 0, 'maxh' => 1, 'bcode' => array());
-            $p = $upce_parities[$code{1}][$r];
+            $p = $upce_parities[$code[1]][$r];
             for ($i = 0; $i < 6; ++$i) {
                 $seq .= $codes[$p[$i]][$upce_code[$i]];
             }
@@ -1485,14 +1485,14 @@ class DNS1D {
                     $seq .= $codes['A'][$code[$i]];
                 }
             } else {
-                $p = $parities[$code{0}];
+                $p = $parities[$code[0]];
                 for ($i = 1; $i < $half_len; ++$i) {
                     $seq .= $codes[$p[$i - 1]][$code[$i]];
                 }
             }
             $seq .= '01010'; // center guard bar
             for ($i = $half_len; $i < $len; ++$i) {
-                $seq .= $codes['C'][$code{intval($i)}];
+                $seq .= $codes['C'][$code[intval($i)]];
             }
             $seq .= '101'; // right guard bar
         }
@@ -1500,7 +1500,7 @@ class DNS1D {
         $w = 0;
         for ($i = 0; $i < $clen; ++$i) {
             $w += 1;
-            if (($i == ($clen - 1)) OR (($i < ($clen - 1)) AND ($seq[$i] != $seq{($i + 1)}))) {
+            if (($i == ($clen - 1)) OR (($i < ($clen - 1)) AND ($seq[$i] != $seq[($i + 1)]))) {
                 if ($seq[$i] == '1') {
                     $t = true; // bar
                 } else {
@@ -1531,7 +1531,7 @@ class DNS1D {
         if ($len == 2) {
             $r = $code % 4;
         } elseif ($len == 5) {
-            $r = (3 * ($code{0} + $code{2} + $code{4})) + (9 * ($code{1} + $code{3}));
+            $r = (3 * ($code[0] + $code[2] + $code[4])) + (9 * ($code[1] + $code[3]));
             $r %= 10;
         } else {
             return false;
@@ -1582,7 +1582,7 @@ class DNS1D {
         );
         $p = $parities[$len][$r];
         $seq = '1011'; // left guard bar
-        $seq .= $codes[$p[0]][$code{0}];
+        $seq .= $codes[$p[0]][$code[0]];
         for ($i = 1; $i < $len; ++$i) {
             $seq .= '01'; // separator
             $seq .= $codes[$p[$i]][$code[$i]];
@@ -1783,25 +1783,25 @@ class DNS1D {
             for ($j = 0; $j < 4; ++$j) {
                 switch ($barmode[$code[$i]][$j]) {
                     case 1: {
-                            $p = 0;
-                            $h = 2;
-                            break;
-                        }
+                        $p = 0;
+                        $h = 2;
+                        break;
+                    }
                     case 2: {
-                            $p = 0;
-                            $h = 3;
-                            break;
-                        }
+                        $p = 0;
+                        $h = 3;
+                        break;
+                    }
                     case 3: {
-                            $p = 1;
-                            $h = 1;
-                            break;
-                        }
+                        $p = 1;
+                        $h = 1;
+                        break;
+                    }
                     case 4: {
-                            $p = 1;
-                            $h = 2;
-                            break;
-                        }
+                        $p = 1;
+                        $h = 2;
+                        break;
+                    }
                 }
                 $bararray['bcode'][$k++] = array('t' => 1, 'w' => 1, 'h' => $h, 'p' => $p);
                 $bararray['bcode'][$k++] = array('t' => 0, 'w' => 1, 'h' => 2, 'p' => 0);
@@ -2002,20 +2002,20 @@ class DNS1D {
         do {
             switch ($code % 3) {
                 case 0: {
-                        $seq .= '3';
-                        $code = ($code - 3) / 3;
-                        break;
-                    }
+                    $seq .= '3';
+                    $code = ($code - 3) / 3;
+                    break;
+                }
                 case 1: {
-                        $seq .= '1';
-                        $code = ($code - 1) / 3;
-                        break;
-                    }
+                    $seq .= '1';
+                    $code = ($code - 1) / 3;
+                    break;
+                }
                 case 2: {
-                        $seq .= '2';
-                        $code = ($code - 2) / 3;
-                        break;
-                    }
+                    $seq .= '2';
+                    $code = ($code - 2) / 3;
+                    break;
+                }
             }
         } while ($code != 0);
         $seq = strrev($seq);
@@ -2025,20 +2025,20 @@ class DNS1D {
         for ($i = 0; $i < $len; ++$i) {
             switch ($seq[$i]) {
                 case '1': {
-                        $p = 1;
-                        $h = 1;
-                        break;
-                    }
+                    $p = 1;
+                    $h = 1;
+                    break;
+                }
                 case '2': {
-                        $p = 0;
-                        $h = 1;
-                        break;
-                    }
+                    $p = 0;
+                    $h = 1;
+                    break;
+                }
                 case '3': {
-                        $p = 0;
-                        $h = 2;
-                        break;
-                    }
+                    $p = 0;
+                    $h = 2;
+                    break;
+                }
             }
             $bararray['bcode'][$k++] = array('t' => 1, 'w' => 1, 'h' => $h, 'p' => $p);
             $bararray['bcode'][$k++] = array('t' => 0, 'w' => 1, 'h' => 2, 'p' => 0);
@@ -2073,30 +2073,30 @@ class DNS1D {
         // Conversion of Routing Code
         switch (strlen($routing_code)) {
             case 0: {
-                    $binary_code = 0;
-                    break;
-                }
+                $binary_code = 0;
+                break;
+            }
             case 5: {
-                    $binary_code = bcadd($routing_code, '1');
-                    break;
-                }
+                $binary_code = bcadd($routing_code, '1');
+                break;
+            }
             case 9: {
-                    $binary_code = bcadd($routing_code, '100001');
-                    break;
-                }
+                $binary_code = bcadd($routing_code, '100001');
+                break;
+            }
             case 11: {
-                    $binary_code = bcadd($routing_code, '1000100001');
-                    break;
-                }
+                $binary_code = bcadd($routing_code, '1000100001');
+                break;
+            }
             default: {
-                    return false;
-                    break;
-                }
+                return false;
+                break;
+            }
         }
         $binary_code = bcmul($binary_code, 10);
-        $binary_code = bcadd($binary_code, $tracking_number{0});
+        $binary_code = bcadd($binary_code, $tracking_number[0]);
         $binary_code = bcmul($binary_code, 5);
-        $binary_code = bcadd($binary_code, $tracking_number{1});
+        $binary_code = bcadd($binary_code, $tracking_number[1]);
         $binary_code .= substr($tracking_number, 2, 18);
         // convert to hexadecimal
         $binary_code = $this->dec_to_hex($binary_code);
